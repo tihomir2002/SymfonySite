@@ -1,0 +1,10 @@
+.about-us-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+
+    div > pre {
+        white-space: pre-line;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,18 @@
+{% set vehicleSlug = "/vehicle/" ~ vehicle['Id'] %}
+
+<a href={{ vehicleSlug }}>
+    <div class="vehicle">
+        <img alt="vehicleimage" src="{{ asset('vehicle.avif') }}">
+        <div class=title>
+            <h3>{{ vehicle['Title'] }}</h3>
+            <div class="description">
+                <span>
+                    {{ vehicle['Desc'] }}
+                </span>
+                <span class="price">
+                    {{vehicle['HighestBid'] }}{{ vehicle['Currency'] }}
+                </span>
+            </div>
+        </div>
+    </div>
+</a>
