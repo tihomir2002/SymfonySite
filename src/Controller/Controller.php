@@ -25,7 +25,9 @@ class Controller extends AbstractController
         return $this->render('vehiclePage.html.twig', [
             'vehicle' => $vehicle,
             'bids' => $this->fetchBids($vehicleId),
-            'userProfiles' => $this->fetchUsers($userProfileIds)
+            'userProfiles' => $this->fetchUsers($userProfileIds),
+            'mainImage' => $this->getMainImage($vehicle),
+            'images' => $this->getImages($vehicle)
         ]);
     }
 
@@ -38,13 +40,13 @@ class Controller extends AbstractController
     private function getVehicles(): array
     {
         return [
-            ["Id" => 1, "Currency" => '$', "Title" => "Vehicle One", "Desc" => "Very nice vehicle this one", "HighestBid" => 2002, "Image" => "/assets/vehicle.avif"],
-            ["Id" => 2, "Currency" => '$', "Title" => "Vehicle Two", "Desc" => "Very nice vehicle this one", "HighestBid" => 546346, "Image" => "/assets/vehicle.avif"],
-            ["Id" => 3, "Currency" => '$', "Title" => "Vehicle Three", "Desc" => "Very nice vehicle this one", "HighestBid" => 5257, "Image" => "/assets/vehicle.avif"],
-            ["Id" => 4, "Currency" => '$', "Title" => "Vehicle Four", "Desc" => "Very nice vehicle this one", "HighestBid" => 32532, "Image" => "/assets/vehicle.avif"],
-            ["Id" => 5, "Currency" => '$', "Title" => "Vehicle Five", "Desc" => "Very nice vehicle this one", "HighestBid" => 25002, "Image" => "/assets/vehicle.avif"],
-            ["Id" => 6, "Currency" => '$', "Title" => "Vehicle Six", "Desc" => "Very nice vehicle this one", "HighestBid" => 2131, "Image" => "/assets/vehicle.avif"],
-            ["Id" => 7, "Currency" => '$', "Title" => "Vehicle Seven", "Desc" => "Very nice vehicle this one", "HighestBid" => 32553252, "Image" => "/assets/vehicle.avif"]
+            ["Id" => 1, "Currency" => '$', "Title" => "Vehicle One", "Desc" => "Very nice vehicle this one", "HighestBid" => 2002, "Images" => ["/assets/vehicle.avif", "/assets/vehicle.avif", "/assets/vehicle.avif", "/assets/vehicle.avif", "/assets/vehicle.avif","/assets/vehicle.avif","/assets/vehicle.avif","/assets/vehicle.avif"]],
+            ["Id" => 2, "Currency" => '$', "Title" => "Vehicle Two", "Desc" => "Very nice vehicle this one", "HighestBid" => 546346, "Images" => ["/assets/vehicle.avif"]],
+            ["Id" => 3, "Currency" => '$', "Title" => "Vehicle Three", "Desc" => "Very nice vehicle this one", "HighestBid" => 5257, "Images" => ["/assets/vehicle.avif"]],
+            ["Id" => 4, "Currency" => '$', "Title" => "Vehicle Four", "Desc" => "Very nice vehicle this one", "HighestBid" => 32532, "Images" => ["/assets/vehicle.avif"]],
+            ["Id" => 5, "Currency" => '$', "Title" => "Vehicle Five", "Desc" => "Very nice vehicle this one", "HighestBid" => 25002, "Images" => ["/assets/vehicle.avif"]],
+            ["Id" => 6, "Currency" => '$', "Title" => "Vehicle Six", "Desc" => "Very nice vehicle this one", "HighestBid" => 2131, "Images" => "/assets/vehicle.avif"],
+            ["Id" => 7, "Currency" => '$', "Title" => "Vehicle Seven", "Desc" => "Very nice vehicle this one", "HighestBid" => 32553252, "Images" => ["/assets/vehicle.avif"]]
         ];
     }
 
@@ -144,5 +146,30 @@ class Controller extends AbstractController
         }
 
         return $selected;
+    }
+
+    private function getMainImage(array $vehicle) : string
+    {
+        if(!isset($vehicle["Images"])) {
+            return '';
+        }
+
+        if(sizeof($vehicle["Images"]) == 0) {
+            return '';
+        }
+
+        return $vehicle["Images"][0];
+    }
+    private function getImages(array $vehicle) : array
+    {
+        if(!isset($vehicle["Images"])) {
+            return [];
+        }
+
+        if(sizeof($vehicle["Images"]) <= 1) {
+            return [];
+        }
+
+        return array_slice($vehicle["Images"], 1);
     }
 }

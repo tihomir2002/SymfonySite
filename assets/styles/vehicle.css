@@ -1,3 +1,7 @@
+.page {
+    padding: 0 10rem;
+}
+
 .top {
     display: flex;
     flex-direction: column;
@@ -8,103 +12,119 @@
 
     img {
         object-fit: contain;
+        cursor: pointer;
     }
 
     .container {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .images {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        ul {
+            list-style: none;
+            display: grid;
+            height: min-content;
+            grid-template-columns: 0.5fr 1fr;
+            gap: 5px;
+            max-height: 100%;
+            overflow-y: auto;
+
+            img {
+                width: 200px;
+            }
+        }
+    }
+
+    .main-image {
+        display: flex;
+        justify-content: space-between;
         border: 2px solid white;
         border-radius: 5px;
-        padding: 20px;
-        height: 60vh;
         background: radial-gradient(black, transparent);
 
-        @media (max-width: 900px) {
-            flex-direction: column;
-            gap: 20px;
+        @media (min-width: 900px) {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid white;
+        }
 
-            ul {
-                padding: 0;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .bids {
+        height: 320px;
+        overflow-y: auto;
+        max-height: 100%;
+        scrollbar-width: thin;
+        scrollbar-color: #273043 #EFF6EE;
+
+        ul {
+            margin: 0;
+            display: flex;
+            padding: 0;
+            flex-direction: column;
+
+            li {
+                list-style: none;
+                margin-right: 10px;
+                height: 100px;
             }
         }
 
-        .image {
-            //height: 100%;
-            //width: 100%;
+        .bid {
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: 10px;
 
-            @media (min-width: 900px) {
-                position: relative;
-                overflow: hidden;
-                border: 2px solid white;
+            .top {
+                display: flex;
+                height: auto;
+                justify-content: space-between;
+                flex-direction: row;
+                margin: 0;
+                font-size: 14px;
+
+                @media (max-width: 900px) {
+                    font-size: 10px;
+                }
+
+                h3 {
+                    margin: 0;
+                }
+            }
+
+            .bottom {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 14px;
+
+                @media (max-width: 900px) {
+                    font-size: 10px;
+                }
+
+                h3 {
+                    margin: 0;
+                }
             }
 
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
 
-        .bids {
-            height: auto;
-            overflow-y: auto;
-            max-height: 100%;
-            scrollbar-width: thin;
-            scrollbar-color: #273043 #EFF6EE;
-
-            ul {
-                margin: 0;
-                display: flex;
-                gap: 10px;
-                flex-direction: column;
-
-                li {
-                    list-style: none;
-                    margin-right: 10px;
-                    height: 100px;
-                }
-            }
-
-            .bid {
-                border: 2px solid white;
-                border-radius: 5px;
-                padding: 10px;
-
-                .top {
-                    display: flex;
-                    height: auto;
-                    justify-content: space-between;
-                    flex-direction: row;
-                    margin: 0;
-                    font-size: 14px;
-
-                    @media (max-width: 900px) {
-                        font-size: 10px;
-                    }
-                }
-
-                .bottom {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    font-size: 14px;
-
-                    @media (max-width: 900px) {
-                        font-size: 10px;
-                    }
-
-                    h3 {
-                        margin: 0;
-                    }
-                }
-
-                img {
-                    width: 75px;
-
-                    @media (max-width: 1110px) {
-                            width: 50px;
-                            height: 100%;
-                    }
+                @media (max-width: 1110px) {
+                    width: 50px;
+                    height: 100%;
                 }
             }
         }

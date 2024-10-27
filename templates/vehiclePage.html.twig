@@ -10,49 +10,61 @@
 <body>
 {{ include('partials/navbar.html.twig') }}
 
-<div class="vehicle-container">
-    <div class="top">
-        <h1>{{ vehicle['Title'] }}</h1>
-        <div class='container'>
-            <div class='image'>
-                <img src='{{ vehicle['Image'] }}' alt='vehicle image'/>
-            </div>
+<div class="page">
+    <div>
+        <div class="top">
+            <h1>{{ vehicle['Title'] }}</h1>
+            <div class="container">
+                <div class="images">
+                    <div class='main-image'>
+                        <img src='{{ mainImage}}' alt='vehicle image'/>
+                    </div>
 
-            <div class='bids'>
-                <ul>
-                    {% for bid in bids %}
-                        <li>
-                            <div class='bid'>
-                                <div class='top'>
-                                    {% for userProfile in userProfiles %}
-                                        {% if userProfile['Id'] == bid['UserProfileId'] %}
-                                            <h3>{{ userProfile['Username'] }}</h3>
-                                            <img src='{{ asset(userProfile['Picture'] )}}' alt='profile image'/>
-                                        {% endif %}
-                                    {% endfor %}
+                    <ul>
+                        {% for image in images %}
+                            <li>
+                                <img src="{{ image }}"/>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class='bids'>
+                    <ul>
+                        {% for bid in bids %}
+                            <li>
+                                <div class='bid'>
+                                    <div class='top'>
+                                        {% for userProfile in userProfiles %}
+                                            {% if userProfile['Id'] == bid['UserProfileId'] %}
+                                                <h3>{{ userProfile['Username'] }}</h3>
+                                                <img src='{{ asset(userProfile['Picture'] ) }}' alt='profile image'/>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class='bottom'>
+                                        <h3>{{ bid['Amount'] }}{{ vehicle['Currency'] }}</h3>
+                                        <span>{{ bid['CreatedAt'] }}</span>
+                                    </div>
                                 </div>
-                                <div class='bottom'>
-                                    <h3>{{ bid['Amount'] }}{{ vehicle['Currency'] }}</h3>
-                                    <span>{{ bid['CreatedAt'] }}</span>
-                                </div>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="mid">
-    <div class="dropdown">
-        <div class="heading">
-            <h2>Description</h2>
-            <button onclick="toggleDropdown()">^</button>
-        </div>
-        <hr/>
-        <div class="text">
-            <p>{{ vehicle['Desc'] }}</p>
+    <div class="mid">
+        <div class="dropdown">
+            <div class="heading">
+                <h2>Description</h2>
+                <button onclick="toggleDropdown()">^</button>
+            </div>
+            <hr/>
+            <div class="text">
+                <p>{{ vehicle['Desc'] }}</p>
+            </div>
         </div>
     </div>
 </div>

@@ -83,6 +83,11 @@ body a {
     }
 }
 
+.vehicle-container {
+    display: flex;
+    justify-content: center;
+}
+
 .content {
     display: flex;
     justify-content: center;
