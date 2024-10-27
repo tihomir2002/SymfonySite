@@ -5,6 +5,9 @@
     <title>AGVS - Actually Good Vehicle Site</title>
     <link rel="stylesheet" href="{{ asset('styles/index.css') }}"/>
     <link rel="stylesheet" href="{{ asset('styles/vehicle.css') }}"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="{{ asset('galleria-1.6.1/src/galleria.js') }}"></script>
 </head>
 
 <body>
@@ -17,7 +20,7 @@
             <div class="container">
                 <div class="images">
                     <div class='main-image'>
-                        <img src='{{ mainImage}}' alt='vehicle image'/>
+                        <img src='{{ mainImage }}' alt='vehicle image'/>
                     </div>
 
                     <ul>
@@ -68,6 +71,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    (function () {
+        if (Galleria) {
+            $("body").text('Galleria works')
+        }
+    }());
+</script>
 </body>
 
 <script>

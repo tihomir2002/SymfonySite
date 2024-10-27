@@ -30,13 +30,13 @@
             list-style: none;
             display: grid;
             height: min-content;
-            grid-template-columns: 0.5fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 5px;
             max-height: 100%;
             overflow-y: auto;
 
             img {
-                width: 200px;
+                width: 100%;
             }
         }
     }

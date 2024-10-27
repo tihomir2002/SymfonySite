@@ -53,16 +53,17 @@ body a {
 
 .navbar {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
     justify-content: center;
     border: solid black 1px;
     background: black;
     border-radius: 5px;
-    height: 250px;
+    height: 100px;
     position: relative;
 
     .titles {
-        position: absolute;
         text-align: center;
         z-index: 1;
         margin: 0;
@@ -77,9 +78,7 @@ body a {
     }
 
     img {
-        position: absolute;
-        height: 200px;
-        bottom: 0;
+        height: 100%;
     }
 }
 
