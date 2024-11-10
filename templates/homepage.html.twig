@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>AGVS - Actually Good Vehicle Site</title>
-    <link rel="stylesheet" href="{{ asset('styles/index.css') }}"/>
-</head>
+{% extends 'base.html.twig' %}
 
-<body>
-{{ include('partials/navbar.html.twig') }}
+{% block title %}
+    Homepage
+{% endblock %}
 
-<div class="content">
-    <div class="vehicle-container">
-        {% for vehicle in vehicles %}
-            {{ include('partials/vehicle.html.twig', { 'vehicle': vehicle }) }}
-        {% endfor %}
+{% block body %}
+    <div class="content">
+        <div class="vehicle-container">
+            {% for vehicle in vehicles %}
+                {{ include('partials/vehicle.html.twig', { 'vehicle': vehicle }) }}
+            {% endfor %}
+        </div>
     </div>
-</div>
-</body>
-</html>
+{% endblock %}

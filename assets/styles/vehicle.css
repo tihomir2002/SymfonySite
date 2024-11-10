@@ -41,6 +41,10 @@
         }
     }
 
+    .empty-img {
+        background: ghostwhite;
+    }
+
     .main-image {
         display: flex;
         justify-content: space-between;

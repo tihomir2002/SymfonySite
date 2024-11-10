@@ -40,13 +40,13 @@ class Controller extends AbstractController
     private function getVehicles(): array
     {
         return [
-            ["Id" => 1, "Currency" => '$', "Title" => "Vehicle One", "Desc" => "Very nice vehicle this one", "HighestBid" => 2002, "Images" => ["/assets/vehicle.avif", "/assets/vehicle.avif", "/assets/vehicle.avif", "/assets/vehicle.avif", "/assets/vehicle.avif","/assets/vehicle.avif","/assets/vehicle.avif","/assets/vehicle.avif"]],
-            ["Id" => 2, "Currency" => '$', "Title" => "Vehicle Two", "Desc" => "Very nice vehicle this one", "HighestBid" => 546346, "Images" => ["/assets/vehicle.avif"]],
-            ["Id" => 3, "Currency" => '$', "Title" => "Vehicle Three", "Desc" => "Very nice vehicle this one", "HighestBid" => 5257, "Images" => ["/assets/vehicle.avif"]],
-            ["Id" => 4, "Currency" => '$', "Title" => "Vehicle Four", "Desc" => "Very nice vehicle this one", "HighestBid" => 32532, "Images" => ["/assets/vehicle.avif"]],
-            ["Id" => 5, "Currency" => '$', "Title" => "Vehicle Five", "Desc" => "Very nice vehicle this one", "HighestBid" => 25002, "Images" => ["/assets/vehicle.avif"]],
-            ["Id" => 6, "Currency" => '$', "Title" => "Vehicle Six", "Desc" => "Very nice vehicle this one", "HighestBid" => 2131, "Images" => "/assets/vehicle.avif"],
-            ["Id" => 7, "Currency" => '$', "Title" => "Vehicle Seven", "Desc" => "Very nice vehicle this one", "HighestBid" => 32553252, "Images" => ["/assets/vehicle.avif"]]
+            ["Id" => 1, "Currency" => '$', "Title" => "Vehicle One", "Desc" => "Very nice vehicle this one", "HighestBid" => 2002, "Images" => ["vehicle.avif", "vehicle.avif", "vehicle.avif", "vehicle.avif", "vehicle.avif","vehicle.avif","vehicle.avif","vehicle.avif"]],
+            ["Id" => 2, "Currency" => '$', "Title" => "Vehicle Two", "Desc" => "Very nice vehicle this one", "HighestBid" => 546346, "Images" => ["vehicle.avif"]],
+            ["Id" => 3, "Currency" => '$', "Title" => "Vehicle Three", "Desc" => "Very nice vehicle this one", "HighestBid" => 5257, "Images" => ["vehicle.avif"]],
+            ["Id" => 4, "Currency" => '$', "Title" => "Vehicle Four", "Desc" => "Very nice vehicle this one", "HighestBid" => 32532, "Images" => ["vehicle.avif"]],
+            ["Id" => 5, "Currency" => '$', "Title" => "Vehicle Five", "Desc" => "Very nice vehicle this one", "HighestBid" => 25002, "Images" => ["vehicle.avif"]],
+            ["Id" => 6, "Currency" => '$', "Title" => "Vehicle Six", "Desc" => "Very nice vehicle this one", "HighestBid" => 2131, "Images" => "vehicle.avif"],
+            ["Id" => 7, "Currency" => '$', "Title" => "Vehicle Seven", "Desc" => "Very nice vehicle this one", "HighestBid" => 32553252, "Images" => ["vehicle.avif"]]
         ];
     }
 
@@ -102,7 +102,7 @@ class Controller extends AbstractController
     private function fetchAllUsers(): array
     {
         return [
-            ['Id' => 1, 'Username' => 'DynamicUsername', 'Picture' => "assets/speedometer.avif"]
+            ['Id' => 1, 'Username' => 'DynamicUsername', 'Picture' => "speedometer.avif"]
         ];
     }
 
