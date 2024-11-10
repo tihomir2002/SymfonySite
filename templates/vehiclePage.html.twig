@@ -21,7 +21,7 @@
 
                             {% for image in images %}
                                 <li>
-                                    <img src="{{ asset(image) }}"/>
+                                    <img src="{{ asset(image) }}" alt="vehicle image"/>
                                 </li>
                             {% endfor %}
                             {% for image in 1..emptyImages %}
@@ -85,9 +85,9 @@
     </script>
 
     <script>
-        function toggleDropdown() {//TODO refactor selectors
-            const dropdownTextElement = document.querySelector("div.dropdown").querySelector("div.text");
-            const button = document.querySelector("div.dropdown").querySelector("div.heading").querySelector("button");
+        function toggleDropdown() {
+            const dropdownTextElement = document.querySelector(".dropdown .text");
+            const button = document.querySelector(".dropdown .heading button");
 
             if (dropdownTextElement.classList.contains('active')) {
                 dropdownTextElement.classList.remove('active');
