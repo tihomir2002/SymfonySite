@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@hotwired/stimulus": "^3.2.2",
-        "galleria": "^1.6.1"
+        "galleria": "^1.6.1",
+        "jquery": "^3.7.1"
     }
 }
